@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <title>테스트</title>
+
+        <style>
+            body {
+                text-align: center;
+            }
+            h2 {
+                margin-bottom: 24px;
+            }
+            button {
+                width: 200px;
+                height: 44px;
+                font-weight: bold;
+            }
+            div {
+                margin-bottom: 16px;
+            }
+        </style>
+
+        <script type="text/javascript">
+            function openApp(code) {
+                var appUrl = "";
+                var itunesUrl = "itms-apps://itunes.apple.com/app/";
+
+                switch (code) {
+                    case 1:
+                        appUrl = "kakaobank://test";
+                        itunesUrl += "id1258016944";
+                        break;
+                    case 2:
+                        appUrl = "solZzeung://test";
+                        itunesUrl += "id357484932";
+                        break;
+                    case 3:
+                        appUrl = "NewSmartPib://test";
+                        itunesUrl += "id1470181651";
+                        break;
+                    case 4:
+                        appUrl = "ionebank://test";
+                        itunesUrl += "id1460543865";
+                        break;
+                    default:
+                        return;
+                }
+                
+                window.location.replace(appUrl); setTimeout(function () {
+                    window.location.replace(itunesUrl);
+                }, 2000);
+            }
+        </script>
+    </head>
+    <body>
+        <h2>인증서를 분실하셨나요?</h2>
+        <div><button onclick="openApp(1)">카카오뱅크</button></div>
+        <div><button onclick="openApp(2)">신한은행</button></div>
+        <div><button onclick="openApp(3)">우리은행</button></div>
+        <div><button onclick="openApp(4)">기업은행</button></div>
+    </body>
+</html>
